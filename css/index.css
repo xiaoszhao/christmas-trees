@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=ZCOOL+QingKe+HuangYou&display=swap");
+
+* {
+  /* 常规初始化 */
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* 解决手机浏览器点击有选框的问题 */
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+  /* 常规居中显示 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  height: 100vh;
+  /* 渐变背景色 */
+  background: radial-gradient(at top, #12313b, #000822);
+}
+
+#overlay-bg {
+  /* 星星背景大小，位置，占整个屏幕 */
+  width: 100vw;
+  height: 100vh;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+#music-list-box {
+  /* 音乐列表整体的大小，位置等 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  pointer-events: none;
+
+  color: #ffd18f;
+  text-align: center;
+
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+#music-list-box h2 {
+  font-size: 4vmin;
+  margin-bottom: 32px;
+}
+
+#music-list-box ul {
+  /* 设置列表宽度，清除默认样式 */
+  max-width: 400px;
+  width: 70vmin;
+  list-style-type: none;
+}
+#music-list-box ul li {
+  /* 每个列表项都隔开一点 */
+  margin: 2vmin 0;
+}
+
+/* 列表中每个选择按钮的大小，颜色，动画等 */
+#music-list-box ul .btn,
+#music-list-box ul .upload-btn {
+  display: block;
+
+  width: 100%;
+  border: 1px solid rgba(255, 209, 143, 0.2);
+  border-radius: 20px;
+  background-color: rgba(30, 30, 30, 0.4);
+  backdrop-filter: saturate(200%) blur(4px);
+
+  color: rgba(255, 209, 143, 0.6);
+  padding: 16px;
+  font-size: 16px;
+
+  outline: none;
+  pointer-events: auto;
+  cursor: pointer;
+
+  transition: all 0.3s;
+}
+#music-list-box ul .btn:hover,
+#music-list-box ul .upload-btn:hover {
+  border: 1px solid rgba(255, 209, 143, 0.6);
+  color: rgba(255, 209, 143, 0.9);
+  background-color: rgba(30, 30, 30, 0.2);
+}
+
+/* 加载中文字大小，颜色 */
+.text-loading {
+  font-size: 4vmin;
+  color: rgba(255, 209, 143, 0.6);
+}
+
+/* 祝福语文字的字体，大小，颜色，动画等 */
+#sentence-box {
+  max-width: 90vmin;
+
+  font-family: Lobster, "ZCOOL QingKe HuangYou", sans-serif;
+  font-weight: 400;
+  font-size: 10vmin;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  user-select: none;
+
+  position: fixed;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  opacity: 0;
+  animation: animate 1s linear forwards;
+  animation-delay: 1s;
+}
+@keyframes animate {
+  100% {
+    opacity: 1;
+  }
+}

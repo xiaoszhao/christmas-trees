@@ -1,0 +1,161 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html {
+    /* overflow: scroll; 添加滚动条 */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+    margin: 0;
+    background: #000; /* 设置背景颜色为黑色 */
+    color: #fff;
+    font-family: 'Courier New', Courier, monospace; /* 打字机字体 */
+    overflow: hidden;
+    /* font-size:62.5%; */
+}
+
+.content {
+    /* text-align: center; */
+    /* position: relative; */
+    text-align: center;
+}
+
+
+
+.glow-text {
+    position: relative;
+    font-size: 2rem;
+    animation: glow 1.5s infinite alternate;
+    white-space: pre; /* 保留空格和换行符 */
+}
+ 
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #ff00ff, 0 0 35px #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 75px #ff00ff;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30em #ff00ff, 0 0 40px #ff00ff, 0 0 50px #ff00ff, 0 0 60px #ff00ff, 0 0 70px #ff00ff, 0 0 100px #ff00ff;
+    }
+}
+
+.an{
+    padding-top: 2px;
+    position: relative;
+    display: flex; 
+    justify-content: center; /* 水平居中 */
+    align-items: center; /* 垂直居中 */
+    width: 200px;
+    height: 80px;
+    padding: 50px;
+}
+
+.an button{
+    display: none;
+    
+    width: 250px;
+    height: 40px;
+    font-size:20px; 
+    /* font-weight: bolder; */
+    /* background-color:rgba(255, 174, 174, 0.2); */
+    background-color:transparent;
+    /* border-style:none; */ 
+    /* padding: 10px 20px; */
+    /* font-size: 1em; */
+    
+    /* padding: 1em 2em;
+    background-color: #ee75b2; */
+    color: #fff;
+    border-radius: 4px; 
+    border: none;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 2px 25px rgba(233, 30, 99, 0.5);
+    outline: 0;
+    transition: transform ease-in 0.1s, background-color ease-in 0.1s,  box-shadow ease-in 0.25s;
+   
+}
+
+/* button:hover {
+    background-color: #ddb2d7;
+} */
+
+button::before{
+    position: absolute;
+    content: '';
+    left: -2em;
+    right: -2em;
+    top: -2em;
+    bottom: -2em;
+    pointer-events: none;
+    transition: ease-in-out .5s;
+    background-repeat: no-repeat;
+    background-image: radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%),
+    radial-gradient(circle, #ff0081 20%, transparent 20%);
+    background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%,
+    15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+    background-position: 18% 40%, 20% 31%, 30% 30%, 40% 30%, 50% 30%, 57% 30%, 65% 30%, 80% 32%, 15% 60%,
+    83% 60%, 18% 70%, 25% 70%, 41% 70%, 50% 70%, 64% 70%, 80% 71%;
+    animation: bubbles ease-in-out .75s forwards;
+}
+ 
+button:active {
+    transform: scale(0.95);
+    background-color: #f0459a;
+    box-shadow: 0 2px 25px rgba(233, 30, 99, 0.5);
+}
+button:active::before {
+    animation: none;
+    background-size: 0;
+}
+@keyframes bubbles {
+    0% {
+    background-position: 18% 40%, 20% 31%, 30% 30%, 40% 30%, 50% 30%, 57% 30%, 65% 30%, 80% 32%, 15% 60%,
+    83% 60%, 18% 70%, 25% 70%, 41% 70%, 50% 70%, 64% 70%, 80% 71%;
+    }
+    50% {
+    background-position: 10% 44%, 0% 20%, 15% 5%, 30% 0%, 42% 0%, 62% -2%, 75% 0%, 95% -2%, 0% 80%,
+    95% 55%, 7% 100%, 24% 100%, 41% 100%, 55% 95%, 68% 96%, 95% 100%;
+    }
+    100% {
+    background-position: 5% 44%, -5% 20%, 7% 5%, 23% 0%, 37% 0, 58% -2%, 80% 0%, 100% -2%, -5% 80%,
+    100% 55%, 2% 100%, 23% 100%, 42% 100%, 60% 95%, 70% 96%, 100% 100%;
+    background-size: 0% 0%;
+    }
+}
+
+
+
+.content .text::after{
+    content: '|';
+    
+    animation: blink 1s infinite
+}
+@keyframes blink{
+    from{
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
